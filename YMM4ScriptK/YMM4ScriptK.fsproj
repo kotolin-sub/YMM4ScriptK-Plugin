@@ -8,12 +8,13 @@
 	  <PathMap>$(RepoRoot)=.</PathMap>
 	  <DebugType>none</DebugType>
     </PropertyGroup>
-	
     <ItemGroup>
         <None Include="Directory.Build.props" />
-		<Compile Include="processor.fs" />
-        <Compile Include="plugin.fs" />
-        
+        <Compile Include="Lua.fs" />
+        <Compile Include="startup.fs" />
+        <Compile Include="script_selector.fs" />
+		<Compile Include="Processor.fs" />
+		<Compile Include="Plugin.fs" />
 
 
 		<Reference Include="YukkuriMovieMaker.Controls">
@@ -21,6 +22,9 @@
 		</Reference>
 		<Reference Include="YukkuriMovieMaker.Plugin">
 			<HintPath>$(YMM4DirPath)YukkuriMovieMaker.Plugin.dll</HintPath>
+		</Reference>
+		<Reference Include="Vortice.Mathematics">
+			<HintPath>$(YMM4DirPath)YukkuriMovieMaker.dll</HintPath>
 		</Reference>
 		<Reference Include="SharpGen.Runtime">
 			<HintPath>$(YMM4DirPath)SharpGen.Runtime.dll</HintPath>

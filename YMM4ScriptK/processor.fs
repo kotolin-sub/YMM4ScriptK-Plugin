@@ -6,7 +6,6 @@ open YukkuriMovieMaker.Commons
 open YukkuriMovieMaker.Player.Video
 
 type internal YMM4ScriptK_Processor(devices: IGraphicsDevicesAndContext, _owner: obj) =
-
     let effect = new Vortice.Direct2D1.Effects.Opacity(devices.DeviceContext)
     let outputImage: ID2D1Image = effect.Output
 

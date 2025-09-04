@@ -1,6 +1,7 @@
 ﻿namespace YMM4ScriptK
 
 open System.Collections.Generic
+open System.ComponentModel.DataAnnotations
 open YukkuriMovieMaker.Commons
 open YukkuriMovieMaker.Exo
 open YukkuriMovieMaker.Player.Video
@@ -11,6 +12,11 @@ type internal YMM4ScriptK() =
     inherit VideoEffectBase()
 
     override this.Label = "YMM4ScriptK"
+    
+    //できてないの？？？
+    [<Display(GroupName = "スクリプト", Name = "スクリプト")>]
+    [<ScriptSelector>]
+    member val SelectedScript: string = null with get, set
 
     override this.CreateExoVideoFilters(keyFrameIndex: int, exoOutputDescription: ExoOutputDescription) =
         [] :> IEnumerable<string>
