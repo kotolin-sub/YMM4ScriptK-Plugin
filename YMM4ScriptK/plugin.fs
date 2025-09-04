@@ -8,15 +8,14 @@ open YukkuriMovieMaker.Player.Video
 open YukkuriMovieMaker.Plugin.Effects
 
 [<VideoEffect("YMMScriptK", [|"いろいろ"|], [||])>]
-type internal YMM4ScriptK() =
+type public YMM4ScriptK() =
     inherit VideoEffectBase()
 
     override this.Label = "YMM4ScriptK"
-    
-    //できてないの？？？
+
     [<Display(GroupName = "スクリプト", Name = "スクリプト")>]
     [<ScriptSelector>]
-    member val SelectedScript: string = null with get, set
+    member val SelectedScript: string = "" with get, set
 
     override this.CreateExoVideoFilters(keyFrameIndex: int, exoOutputDescription: ExoOutputDescription) =
         [] :> IEnumerable<string>
